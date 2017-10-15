@@ -17,6 +17,7 @@
 		DE5DA3951F913CE700BEB652 /* ContactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5DA3941F913CE700BEB652 /* ContactsUITests.swift */; };
 		DE5DA3A31F913EEA00BEB652 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5DA3A21F913EEA00BEB652 /* ContactsTableViewController.swift */; };
 		DE5DA3A51F91515E00BEB652 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5DA3A41F91515D00BEB652 /* Contacts.swift */; };
+		DE5DA3A91F916A9100BEB652 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5DA3A81F916A9100BEB652 /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		DE5DA3961F913CE700BEB652 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE5DA3A21F913EEA00BEB652 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		DE5DA3A41F91515D00BEB652 /* Contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
+		DE5DA3A81F916A9100BEB652 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				DE5DA3711F913CE700BEB652 /* AppDelegate.swift */,
 				DE5DA3731F913CE700BEB652 /* ViewController.swift */,
 				DE5DA3751F913CE700BEB652 /* Main.storyboard */,
+				DE5DA3A81F916A9100BEB652 /* DetailsViewController.swift */,
 				DE5DA3A41F91515D00BEB652 /* Contacts.swift */,
 				DE5DA3A21F913EEA00BEB652 /* ContactsTableViewController.swift */,
 				DE5DA37B1F913CE700BEB652 /* Assets.xcassets */,
@@ -273,6 +276,7 @@
 				DE5DA3A31F913EEA00BEB652 /* ContactsTableViewController.swift in Sources */,
 				DE5DA37A1F913CE700BEB652 /* Contacts.xcdatamodeld in Sources */,
 				DE5DA3A51F91515E00BEB652 /* Contacts.swift in Sources */,
+				DE5DA3A91F916A9100BEB652 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,9 +9,19 @@
 import UIKit
 
 class ContactsTableViewController: UITableViewController {
+    
+    var contacts:[Contacts] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let jenny = Contacts(phoneNumber: "456-8978")
+        let rich = Contacts(name: "Rich", phoneNumber: "888-8888")
+        let mindy = Contacts(name: "Mindy")
+        
+        self.contacts.append(jenny)
+        self.contacts.append(rich)
+        self.contacts.append(mindy)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -33,7 +43,7 @@ class ContactsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5  // BD: Changed this
+        return self.contacts.count // BD: Changed this
     }
 
 
@@ -42,7 +52,13 @@ class ContactsTableViewController: UITableViewController {
 
         // Configure the cell...
         
-        cell.textLabel?.text = "A fine example of a UITableViewCell."  // BD: Added this string
+        let contact = self.contacts[indexPath.row]
+        
+        if let name = contact.name {
+            cell.textLabel?.text = name
+        } else {
+            cell.textLabel?.text = "No Name"
+        }
         
         return cell
     }
@@ -56,7 +72,7 @@ class ContactsTableViewController: UITableViewController {
     }
     */
 
-    /*
+
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -66,7 +82,7 @@ class ContactsTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+
 
     /*
     // Override to support rearranging the table view.
@@ -83,14 +99,19 @@ class ContactsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let indexPath = self.tableView.indexPath(for: sender as! UITableViewCell)!
+        let contact = self.contacts[indexPath.row]
+        let destination = segue.destination as! DetailsViewController
+        destination.contact = contact
+    }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-    }
-    */
+    
+
 
 }
