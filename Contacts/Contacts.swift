@@ -18,16 +18,17 @@ import UIKit
  The properties not specified at init time will just default to nil. This gives us the flexibility of using init with just the data we have but retains the safety of optionals.
  */
 
-class Contacts: NSObject { // BD: Swift objects are not required to inherit do this if 1. if are you accessing old features(NSObject) of OBjC and makes it more readable for yourself and others
+class Contacts: NSObject { // BD: We are explicitly adding type.  Swift objects are not required to inherit but if are you accessing old methods (NSObject) of OBjC and this also makes it more readable for yourself and others that the type for this object is NSObject
     
     var name: String?
     var phoneNumber: String?
     
+    // TODO: when to call super.init 
     // instantiate variables ,
     init(name: String? = nil, phoneNumber: String? = nil) {
+        super.init()
         self.name = name
         self.phoneNumber = phoneNumber
-        super.init()
     }
 
 }

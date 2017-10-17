@@ -12,9 +12,23 @@ class ContactsTableViewController: UITableViewController {
     
     var contacts:[Contacts] = []
     
-    @objc func toggleEdit() { // BD: @objc because this method has not been updated for Swift for the moveButton line 29 remvoe @obj see error review this again to update this comment
+    @objc func toggleEdit() { // BD: @objc because this method has not been updated for Swift for #selector remove @obj see error review this again to update this comment
         tableView.setEditing(!tableView.isEditing, animated: true)
     };
+    
+   @objc func addContact() {
+        let newContact = Contacts(name: "New Contact")
+        self.contacts.append(newContact)
+        let newIndexPath = IndexPath(row: self.contacts.count - 1, section:0)
+        self.tableView.insertRows(at: [newIndexPath], with: .automatic)
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +44,12 @@ class ContactsTableViewController: UITableViewController {
         let moveButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(ContactsTableViewController.toggleEdit))
         navigationItem.leftBarButtonItem = moveButton
         
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action:
+            #selector(ContactsTableViewController.addContact))
+        navigationItem.rightBarButtonItem = addButton
         
         // Uncomment the following line to preserve selection between presentations
+        
         // self.clearsSelectionOnViewWillAppear = false
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controlle r.
@@ -51,7 +69,7 @@ class ContactsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return self.contacts.count // BD: return value is the number of rows we want displayed which is equal to how many (.count) of contacts we have this can vary depending on what the count is
+        return self.contacts.count // BD: return value is the number of rows we want displayed which is equal to how many (.count) contacts we have this can vary depending on what the count is
     }
     
     
