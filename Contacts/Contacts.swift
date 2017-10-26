@@ -22,14 +22,20 @@ class Contacts: NSObject { // BD: We are explicitly adding type.  Swift objects 
     
     var name: String?
     var phoneNumber: String?
+    var address: String?
+    var cool: Bool
     
     // TODO: when to call super.init 
     // instantiate variables ,
-    init(name: String? = nil, phoneNumber: String? = nil) {
-        super.init()
+    init(name: String? = nil, phoneNumber: String? = nil, address: String? = nil, cool: Bool = false) {
         self.name = name
         self.phoneNumber = phoneNumber
+        self.address = address
+        self.cool = cool
+        super.init()
+
     }
+    //             coolSwitch.isOn = contact.cool
 
 }
 

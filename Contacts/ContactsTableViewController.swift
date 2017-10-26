@@ -35,7 +35,7 @@ class ContactsTableViewController: UITableViewController {
         
         let jenny = Contacts(phoneNumber: "456-8978")
         let rich = Contacts(name: "Rich", phoneNumber: "888-8888")
-        let mindy = Contacts(name: "Mindy")
+        let mindy = Contacts(name: "Mindy", cool:true)
         
         self.contacts.append(jenny)
         self.contacts.append(rich)
@@ -80,6 +80,8 @@ class ContactsTableViewController: UITableViewController {
         
         // Configure the cell...
         let contact = self.contacts[indexPath.row]
+        
+        cell.detailTextLabel?.text = contact.cool ? "cool" : "Not Cool"
         
         if let name = contact.name {
             cell.textLabel?.text = name
